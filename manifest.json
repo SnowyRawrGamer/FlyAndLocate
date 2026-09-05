@@ -1,0 +1,7 @@
+{
+  "name": "FlyAndLocate",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/SnowyRawrGamer/FlyAndLocate",
+  "description": "Flight mode and player locator for Big Walk.",
+  "dependencies": ["BepInEx-BepInExPack_IL2CPP-6.0.0-pre.2"]
+}
