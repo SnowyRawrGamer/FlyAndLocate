@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>FlyAndLocate</AssemblyName>
+    <RootNamespace>FlyAndLocate</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GameDir Condition="'$(GameDir)' == ''">/Users/joelmclaughlin/Documents/Steambuild 32 64bit DXVK.app/Contents/SharedSupport/prefix/drive_c/Program Files (x86)/Steam/steamapps/common/Big Walk</GameDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-pre.2" PrivateAssets="all" />
+    <PackageReference Include="Il2CppInterop.Runtime" Version="1.5.3" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <InteropAssemblies Include="$(GameDir)/BepInEx/interop/*.dll" />
+    <CoreAssemblies Include="$(GameDir)/BepInEx/core/*.dll" />
+    <Reference Include="%(InteropAssemblies.Filename)"><HintPath>%(InteropAssemblies.Identity)</HintPath><Private>False</Private></Reference>
+    <Reference Include="%(CoreAssemblies.Filename)"><HintPath>%(CoreAssemblies.Identity)</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+</Project>
